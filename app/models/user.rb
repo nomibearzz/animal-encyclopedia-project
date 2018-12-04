@@ -8,10 +8,15 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :animals, through: :comments
 
+  validates :username, :email, uniqueness: true
+  validates_presence_of :username, :email, :first_name
+
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)
   end
 
-
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 
 end
