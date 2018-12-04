@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  scientic_name: MyString
+  family_name: MyString
+  classification: MyString
+  diet: MyString
+  life_span: MyString
+  habitat: MyString
+
+two:
+  name: MyString
+  description: MyString
+  scientic_name: MyString
+  family_name: MyString
+  classification: MyString
+  diet: MyString
+  life_span: MyString
+  habitat: MyString
