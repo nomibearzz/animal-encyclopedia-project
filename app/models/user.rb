@@ -7,4 +7,11 @@ class User < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :animals, through: :comments
+
+  def password=(password)
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+
+
 end
