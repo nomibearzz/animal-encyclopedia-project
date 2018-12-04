@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :animals, through: :save_animals
 
   has_many :comments, dependent: :destroy
-  has_many :animals, though: :comments
+  has_many :animals, through: :comments
 end
