@@ -28,6 +28,12 @@
     <h3>Habitat</h3>
     <p><%= @animal.habitat %></p>
 
+    <% if @user.admin == true %>
+      <%= button_to "Edit", edit_animal_path, method: :get %>
+
+      <%= button_to "Remove", @animal, method: :delete %>
+    <% end %>
+
   </div>
 
 </body>

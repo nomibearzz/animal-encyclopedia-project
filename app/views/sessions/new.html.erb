@@ -1,2 +1,30 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+  </head>
+
+  <body>
+    <h1>Login Page</h1>
+
+    <div class="error message">
+      <% if flash[:error] %>
+        <%= flash[:error] %>
+      <% end %>
+    </div>
+
+    <%= form_with url: sessions_path, local: true do |f| %>
+      <p>  <%= f.label :username %>
+        <%= f.text_field :username %> </p>
+
+      <p>  <%= f.label :password %>
+        <%= f.password_field :password %> </p>
+
+      <p><%= f.submit "Log in" %></p>
+      <% end %>
+
+      <p><%= link_to "New Account", new_user_path %></p>
+  </body>
+
+</html>

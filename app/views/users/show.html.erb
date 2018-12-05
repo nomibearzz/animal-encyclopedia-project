@@ -2,3 +2,10 @@
 
 <h2>Hello, <%= @user.full_name%></h2>
 <p>Email address: <%= @user.email %></p>
+
+<%= link_to "Animals List", animals_path %>
+
+<% if @user.admin == true %>
+  <%= link_to "Add an Animal", new_animal_path  %>
+  <%= link_to "Edit an Animal", animals_path %>
+<% end %>

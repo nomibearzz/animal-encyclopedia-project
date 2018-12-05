@@ -7,6 +7,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <nav>
+
+      <%= link_to "Animals Encyclopedia", animals_path  %>
+
+
+      <% if session[:user_id] %>
+        <%=  link_to "Log out", log_out_path, method: :delete%>
+        <%= link_to "Account", user_path(session[:user_id]) %>
+
+      <% else %>
+
+
+        <%= link_to "Log In", new_session_path %>
+      <% end %>
+
+
+    </nav>
   </head>
 
   <body>

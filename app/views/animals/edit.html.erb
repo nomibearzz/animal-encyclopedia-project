@@ -1,0 +1,46 @@
+<h1>Edit <%= @animal.name%></h1>
+
+<%= form_for @animal do |f| %>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+    </p>
+
+    <p>
+      <%= f.label :scientific_name %>
+      <%= f.text_field :scientific_name%>
+    </p>
+
+    <p>
+      <%= f.label :family_name %>
+      <%= f.text_field :family_name %>
+    </p>
+
+    <p>
+      <%= f.label :classification%>
+      <%= f.text_field :classification %>
+    </p>
+
+    <p>
+      <%= f.label :diet %>
+      <%= f.text_field :diet%>
+    </p>
+
+    <p>
+      <%= f.label :life_span %>
+      <%= f.text_field :life_span%>
+    </p>
+
+    <p>
+      <%= f.label :habitat %>
+      <%= f.text_field :habitat %>
+    </p>
+
+    <p> <%= f.submit %>  </p>
+<% end %>
