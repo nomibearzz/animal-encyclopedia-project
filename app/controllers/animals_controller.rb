@@ -7,6 +7,7 @@ class AnimalsController < ApplicationController
 
   def show
     @user = current_user
+    @comment = Comment.new
   end
 
   def new

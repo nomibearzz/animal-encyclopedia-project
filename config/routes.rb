@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :animals
   resources :users
+  resources :comments, only: :create
   resources :sessions, only: [:new,:create]
   delete '/sessions', to: 'sessions#destroy', as: "log_out"
 
