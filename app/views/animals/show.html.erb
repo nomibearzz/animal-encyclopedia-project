@@ -38,10 +38,15 @@
 
     <% if current_user != nil %>
 
-      <%=button_to "Likes", favorite_animal_path(current_user.id, @animal.id), method: :post  %>
+      <%= form_for @favorite_animal do |f| %>
+        <%= f.hidden_field :animal_id, :value => @animal.id %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+       <span><%=f.submit "Likes" %>
+       <% end %>
+       <%= @animal.favorite_animals.count%></span>
 
      <% if @user.admin == true %>
-       <%= button_to "Edit", edit_animal_path, method: :get %>
+       <%= button_to "Edit", edit_animals_path, method: :get %>
        <%= button_to "Remove", @animal, method: :delete %>
      <% end %>
 

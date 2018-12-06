@@ -8,6 +8,7 @@ class AnimalsController < ApplicationController
   def show
     @user = current_user
     @comment = Comment.new
+    @favorite_animal = FavoriteAnimal.new
   end
 
   def new

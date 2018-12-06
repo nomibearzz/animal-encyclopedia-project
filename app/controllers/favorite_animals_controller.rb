@@ -1,12 +1,13 @@
 class FavoriteAnimalsController < ApplicationController
   def new
     @favorite_animal = FavoriteAnimal.new
+    redirect_to animal_path(@animal)
   end
 
   def create
     @favorite_animal = FavoriteAnimal.create(favorite_params)
     if @favorite_animal.save
-      redirect_to animals_path
+      redirect_back(fallback_location: animals_path)
     end
   end
 
