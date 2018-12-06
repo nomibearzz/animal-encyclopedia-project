@@ -8,23 +8,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <nav>
+    <div class="navbar">
 
-      <%= link_to "Animals Encyclopedia", animals_path  %>
+    <%= link_to "Animals Encyclopedia", animals_path, class: 'Encyclopedia'  %>
 
+       <div class="login">
+         <button class="dropbtn">Log In<i class="fa fa-caret-down"></i></button>
+      <div class="dropdown-content">
 
-      <% if session[:user_id] %>
-        <%=  link_to "Log out", log_out_path, method: :delete%>
-        <%= link_to "Account", user_path(session[:user_id]) %>
-
-      <% else %>
-
-
+        <% if session[:user_id] %>
+          <%=  link_to "Log out", log_out_path, method: :delete%>
+          <%= link_to "Account", user_path(session[:user_id]) %>
+        <% else %>
         <%= link_to "Log In", new_session_path %>
-      <% end %>
+        <% end %>
+      </div>
+      </div>
 
-
-    </nav>
+    </div>
   </head>
 
   <body>
