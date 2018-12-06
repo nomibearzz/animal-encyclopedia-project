@@ -37,6 +37,9 @@
     <% end %>
 
     <% if current_user != nil %>
+
+      
+
      <% if @user.admin == true %>
        <%= button_to "Edit", edit_animal_path, method: :get %>
        <%= button_to "Remove", @animal, method: :delete %>
