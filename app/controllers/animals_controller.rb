@@ -9,6 +9,7 @@ class AnimalsController < ApplicationController
     @user = current_user
     @comment = Comment.new
     @favorite_animal = FavoriteAnimal.new
+    @save = SaveAnimal.new
   end
 
   def new

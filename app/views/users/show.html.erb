@@ -9,6 +9,13 @@
   <%= link_to "Add an Animal", new_animal_path  %>
   <%= link_to "Edit an Animal", animals_path %>
 <% end %>
-<% @user.favorite_animals.each do |f| %>
-<p><%= f.animal.name %></p>
-<% end  %>
+
+<h3>Favorite Animals</h3>
+  <% @user.favorite_animals.each do |f| %>
+   <p><%= f.animal.name %></p>
+ <% end  %>
+
+<h3>Bookmarks</h3>
+  <% @user.save_animals.each do |s| %>
+   <p><%= link_to s.animal.name, s.animal %></p>
+  <% end  %>

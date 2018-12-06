@@ -38,12 +38,14 @@
 
     <% if current_user != nil %>
 
+     <div class="like">
       <%= form_for @favorite_animal do |f| %>
         <%= f.hidden_field :animal_id, :value => @animal.id %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
        <span><%=f.submit "Likes" %>
        <% end %>
        <%= @animal.favorite_animals.count%></span>
+       </div>
 
      <% if @user.admin == true %>
        <%= button_to "Edit", edit_animals_path, method: :get %>
@@ -57,6 +59,14 @@
            <%= f.hidden_field :animal_id, :value => @animal.id %>
          <%= f.submit %></p>
        <% end %>
+     </div>
+     <div class="bookmark">
+       <%= form_for @save do |f| %>
+        <%= f.hidden_field :animal_id, :value => @animal.id %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <span><%=f.submit "Bookmark" %>
+        <% end %>
+
      </div>
 
      <% else %>
