@@ -8,6 +8,14 @@
 Animal.destroy_all
 User.destroy_all
 
+User.create(username: "admin", password: "admin", email: "admin@gmail.com", first_name: "Administrator", admin: true)
+
+User.create(username: "jobiwan", password: "password", email: "jobi_wan@gmail.com", first_name: "Joe", last_name: "M", admin:nil)
+
+User.create(username: "the_force", password: "password", email: "force@gmail.com", first_name: "Chris", admin:nil)
+
+User.create(username: "danboard", password: "password", email: "box@gmail.com", first_name: "the", last_name: "Box", admin:nil)
+
 Animal.create(name: "Giant Panda", description: "High in dense bamboo forests in the misty, rainy mountains of southwestern China lives one of the world's rarest mammals: the giant panda, also called the panda. Only about 1,500 of these black-and-white relatives of bears survive in the wild.", scientific_name: "Ailuropoda melanoleuca", family_name: "Ursidae", classification: "Mammal", diet: "Omnivore", life_span: "20 years", habitat: "High-altitude, moist bamboo forest")
 
 Animal.create(name: "Brown Bear", description: "As winter approaches, brown bears—often called grizzly bears—prepare for a long hibernation. During the fall, a brown bear eats practically around the clock, stocking up for the four to seven months when it'll have to live off stored body fat. A grizzly may chow down on 90 pounds (40 kilograms) of food each day.", scientific_name: "Ursus arctos", family_name: "Ursidae", classification: "Mammal", diet: "Omnivore", life_span: "25 years", habitat: "Grassland, Mountain")
