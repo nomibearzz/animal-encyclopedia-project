@@ -12,35 +12,37 @@
 <div class="new user">
   <%= form_for @user do |f| %>
   <p>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.label :username %>*
+    <%= f.text_field :username, placeholder: "username" %>
   </p>
 
   <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.label :email %>*
+    <%= f.text_field :email, placeholder: "email" %>
   </p>
 
 
   <p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.label :first_name %>*
+    <%= f.text_field :first_name, placeholder: "first name"%>
   </p>
 
 
 
 <p>
   <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <%= f.text_field :last_name, placeholder: "last name" %>
 </p>
 
 
 <p>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.label :password %>*
+  <%= f.password_field :password, placeholder: "password"%>
 
 </p>
+
+  <p>*(required)</p>
 
   <p>  <%= f.submit %></p>
 
