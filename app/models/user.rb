@@ -18,6 +18,14 @@ class User < ApplicationRecord
   #   self.password_digest = BCrypt::Password.create(password)
   # end
 
+
+  after_commit :assign_customer_id, on: :create
+
+  def assign_customer_id
+    customer = Stripe::Customer.create(email: email)
+    self.customer_id = customer.id
+  end
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
