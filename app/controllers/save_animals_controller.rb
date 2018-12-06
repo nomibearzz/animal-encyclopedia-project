@@ -1,0 +1,2 @@
+class SaveAnimalsController < ApplicationController
+end
