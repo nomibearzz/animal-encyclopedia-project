@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    @user = User.find(session[:user_id])
+    @user = User.find_by(id: session[:user_id])
   end
 
   def logging_in
@@ -20,4 +20,5 @@ class ApplicationController < ActionController::Base
   def authenticate
     redirect_to new_session_path unless logged_in
   end
+
 end

@@ -28,11 +28,34 @@
     <h3>Habitat</h3>
     <p><%= @animal.habitat %></p>
 
-    <% if @user.admin == true %>
-      <%= button_to "Edit", edit_animal_path, method: :get %>
-
-      <%= button_to "Remove", @animal, method: :delete %>
+    <h3>Comments</h3>
+    <% @animal.comments.zip(@animal.users).map do |comment, user| %>
+      <p>
+        <strong><%= user.username %></strong> <br>
+        <%= comment.comment %>
+      </p>
     <% end %>
+
+    <% if current_user != nil %>
+     <% if @user.admin == true %>
+       <%= button_to "Edit", edit_animal_path, method: :get %>
+       <%= button_to "Remove", @animal, method: :delete %>
+     <% end %>
+
+     <div class="comment">
+       <%= form_for @comment do |f| %>
+         <p><%= f.text_area :comment, placeholder: "Enter a comment" %><br>
+           <%= f.hidden_field :user_id, :value => current_user.id %>
+           <%= f.hidden_field :animal_id, :value => @animal.id %>
+         <%= f.submit %></p>
+       <% end %>
+     </div>
+
+     <% else %>
+     <div class="cannot comment">
+       <p>You must sign in to comment</p>
+     </div>
+   <% end %>
 
   </div>
 
