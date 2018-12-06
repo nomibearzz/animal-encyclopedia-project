@@ -48,7 +48,7 @@
        </div>
 
      <% if @user.admin == true %>
-       <%= button_to "Edit", edit_animals_path, method: :get %>
+       <%= button_to "Edit", edit_animal_path, method: :get %>
        <%= button_to "Remove", @animal, method: :delete %>
      <% end %>
 
