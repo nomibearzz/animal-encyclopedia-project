@@ -38,7 +38,7 @@
 
     <% if current_user != nil %>
 
-      
+      <%=button_to "Likes", favorite_animal_path(current_user.id, @animal.id), method: :post  %>
 
      <% if @user.admin == true %>
        <%= button_to "Edit", edit_animal_path, method: :get %>

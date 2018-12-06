@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   resources :animals
+  resource :favorite_animals
   resources :users, only: [:show, :new,:create, :destroy, :index]
   resources :comments, only: :create
   resources :sessions, only: [:new,:create]
