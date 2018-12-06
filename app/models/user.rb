@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :animals, through: :comments
 
+  has_many :adopts, dependent: :destroy
+  has_many :animals, through: :adopts
+
   validates :username, :email, uniqueness: true
   validates_presence_of :username, :email, :first_name
 

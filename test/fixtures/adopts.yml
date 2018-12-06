@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nickname: MyString
+  fee: 9.99
+  user: one
+  animal: one
+
+two:
+  nickname: MyString
+  fee: 9.99
+  user: two
+  animal: two

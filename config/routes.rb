@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :adopts
   get 'sessions/new'
   resources :save_animals
   resources :animals
