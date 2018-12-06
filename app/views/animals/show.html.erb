@@ -1,10 +1,11 @@
 <body>
   <h1><%= @animal.name %></h1>
-  <h2><%=@animal.name%> Facts</h2>
 
-  <p>
-    <%= @animal.photo %>
-  </p>
+  <div class="photo">
+  <span><%= image_tag (@animal.photo) %></span>
+  </div>
+
+  <h2><%=@animal.name%> Facts</h2>
 
   <h3>Description</h3>
   <div class="animal description">
@@ -48,7 +49,7 @@
        </div>
 
      <% if @user.admin == true %>
-       <%= button_to "Edit", edit_animals_path, method: :get %>
+       <%= button_to "Edit", edit_animal_path, method: :get %>
        <%= button_to "Remove", @animal, method: :delete %>
      <% end %>
 
