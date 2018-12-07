@@ -6,10 +6,14 @@ class AnimalsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @comment = Comment.new
-    @favorite_animal = FavoriteAnimal.new
-    @save = SaveAnimal.new
+    if @animal == nil
+      redirect_to animals_path
+    else
+      @user = current_user
+      @comment = Comment.new
+      @favorite_animal = FavoriteAnimal.new
+      @save = SaveAnimal.new
+    end
   end
 
   def new
@@ -35,7 +39,7 @@ class AnimalsController < ApplicationController
   end
 
   def update
-    @animal.updated
+    @animal.update(animal_params)
     redirect_to @animal
   end
 
@@ -46,7 +50,7 @@ class AnimalsController < ApplicationController
 
   private
   def find_animal
-    @animal = Animal.find(params[:id])
+    @animal = Animal.find_by(id: params[:id])
   end
 
   def animal_params

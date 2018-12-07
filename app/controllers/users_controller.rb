@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate, except: [:new, :create]
   before_action :find_user, only: [:show, :destroy]
-
   def show
+
 
   end
 
