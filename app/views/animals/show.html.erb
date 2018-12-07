@@ -43,14 +43,14 @@
       <%= form_for @favorite_animal do |f| %>
         <%= f.hidden_field :animal_id, :value => @animal.id %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
-       <span><%=f.submit "Likes" %>
+       <span><%=f.submit "Likes", id: "sub" %>
        <% end %>
        <%= @animal.favorite_animals.count%></span>
        </div>
 
      <% if @user.admin == true %>
-       <%= button_to "Edit", edit_animal_path, method: :get %>
-       <%= button_to "Remove", @animal, method: :delete %>
+       <%= button_to "Edit", edit_animal_path, method: :get, id: "sub" %>
+       <%= button_to "Remove", @animal, method: :delete, id: "sub" %>
      <% end %>
 
      <div class="comment">
@@ -58,14 +58,14 @@
          <p><%= f.text_area :comment, placeholder: "Enter a comment", id: "comment" %><br>
            <%= f.hidden_field :user_id, :value => current_user.id %>
            <%= f.hidden_field :animal_id, :value => @animal.id %>
-         <%= f.submit %></p>
+         <%= f.submit "Comment", id: "sub" %></p>
        <% end %>
      </div>
      <div class="bookmark">
        <%= form_for @save do |f| %>
         <%= f.hidden_field :animal_id, :value => @animal.id %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
-        <span><%=f.submit "Bookmark" %>
+        <span><%=f.submit "Bookmark", id: "sub" %>
         <% end %>
 
      </div>
