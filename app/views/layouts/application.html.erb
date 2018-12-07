@@ -9,31 +9,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
-    <div class="topnav">
+
       <nav>
 
-      <a href="#">  <%= link_to "Animals Encyclopedia", animals_path  %> </a>
+      <a id="logo" href="#">  <%= link_to "Animals Encyclopedia", animals_path  %> </a>
         <% if session[:user_id] %>
-          <a href="#>"<%= link_to "Account", user_path(session[:user_id]) %></a>
+          <a href="#"><%= link_to "Account", user_path(session[:user_id]) %></a>
             <% if current_user.admin == true %>
             <a href="#"> <%= link_to "Add Animal", new_animal_path, method: :get %></a>
               <a href="#"><%= link_to "Edit Animal", animals_path, method: :get %>
             <% end %></a>
 
-          <a href="#"><%=  link_to "Log out", log_out_path, method: :delete%></a>
+          <a href="#"><%=  link_to "Sign out", log_out_path, method: :delete%></a>
 
 
 
         <% else %>
-        <a href="#">  <%= link_to "Log In", new_session_path %></a>
+        <a href="#">  <%= link_to "Sign In", new_session_path %></a>
         <% end %>
-
-
-
-
-
       </nav>
-    </div>
+
 
 
 
