@@ -2,7 +2,7 @@
   <h1><%= @animal.name %></h1>
 
   <div class="photo">
-  <span><%= image_tag (@animal.photo) %></span>
+  <span><%= image_tag (@animal.photo), class: "img-thumbnail" %></span>
   </div>
 
   <h2><%=@animal.name%> Facts</h2>

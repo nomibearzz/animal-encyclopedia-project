@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
-    <meta charset="utf-8">
     <title>Login Page</title>
+
   </head>
 
   <body>
@@ -14,17 +14,30 @@
       <% end %>
     </div>
 
-    <%= form_with url: sessions_path, local: true do |f| %>
-      <p>  <%= f.label :username %>
-        <%= f.text_field :username, placeholder: "danboard" %> </p>
+    <div class="form">
 
-      <p>  <%= f.label :password %>
-        <%= f.password_field :password, placeholder: "password" %> </p>
+    <%=form_with url: sessions_path, local: true do |f|%>
 
-      <p><%= f.submit "Log in" %></p>
+
+    <p>
+      <%= f.text_field :username, placeholder: "danboard", id: "user" %>
+    </p>
+
+
+
+    <p>
+      <%= f.password_field :password, placeholder: "password", id: "pass" %>
+    </p>
+
+
+
+        <p><%= f.submit "Log in", id:"button"%></p>
+
+      <%= link_to "New Account", new_user_path, id: "new" %>
       <% end %>
+    </div>
 
-      <p><%= link_to "New Account", new_user_path %></p>
+
   </body>
 
 </html>
