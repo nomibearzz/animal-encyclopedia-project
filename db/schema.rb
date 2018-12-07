@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_192831) do
+ActiveRecord::Schema.define(version: 2018_12_07_030732) do
 
   create_table "adopts", force: :cascade do |t|
     t.string "nickname"
-    t.decimal "fee"
     t.integer "user_id"
     t.integer "animal_id"
     t.datetime "created_at", null: false
