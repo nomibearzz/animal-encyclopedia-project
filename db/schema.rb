@@ -48,12 +48,10 @@ ActiveRecord::Schema.define(version: 2018_12_06_192831) do
   end
 
   create_table "favorite_animals", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "animal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["animal_id"], name: "index_favorite_animals_on_animal_id"
-    t.index ["user_id"], name: "index_favorite_animals_on_user_id"
+    t.integer "animal_id"
+    t.integer "user_id"
   end
 
   create_table "save_animals", force: :cascade do |t|
