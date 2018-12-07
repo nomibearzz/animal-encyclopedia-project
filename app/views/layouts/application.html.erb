@@ -14,12 +14,9 @@
 
 
       <% if session[:user_id] %>
-        <%=  link_to "Log out", log_out_path, method: :delete%>
         <%= link_to "Account", user_path(session[:user_id]) %>
-
+        <%=  link_to "Log out", log_out_path, method: :delete%>
       <% else %>
-
-
         <%= link_to "Log In", new_session_path %>
       <% end %>
 
