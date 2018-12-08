@@ -30,9 +30,9 @@
     <p><%= @animal.habitat %></p>
 
     <h3>Comments</h3>
-    <% @animal.comments.zip(@animal.users).map do |comment, user| %>
+    <% @animal.comments.each do |comment| %>
       <p>
-        <strong><%= user.username %></strong> <br>
+        <strong><%= comment.user.username %></strong> <br>
         <%= comment.comment %>
       </p>
     <% end %>
